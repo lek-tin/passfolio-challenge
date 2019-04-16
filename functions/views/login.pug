@@ -1,0 +1,16 @@
+extends layout-public
+
+block content
+  h3 Log In
+  form(action="/user/login", method="POST")
+    .row
+      .input-field.col.s12
+        input#email.validate(type='email', name='email')
+        label(for='email') Email
+    .row
+      .input-field.col.s12
+        input#password.validate(type='password', name='password')
+        label(for='password') Password
+    .row
+        .input-field.col.s12
+          button.waves-effect.waves-light.btn(type="submit") Submit

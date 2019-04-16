@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  h5#balance-main Current Balance: #[span #{numFC}] Firestore Credits(FC); #[span #{numDC}] Database Credits(DC)
+  table.responsive-table.highlight
+    thead
+      tr
+        th Email
+        th Amount of Firestore Credits
+        th Action
+        th Amount of Database Credits
+        th Action
+    tbody
+      each user in users
+        if user.email != email
+          tr
+            td #{user.email}
+            td
+              input.trans-input.firestore-input(type='number', min="0", name="firestore", data-email=user.email)
+            td
+              .waves-effect.waves-light.btn.firestore-send(data-email=user.email) Send FC
+            td
+              input.trans-input.database-input(type='number', min="0", name="database", data-email=user.email)
+            td
+              .waves-effect.waves-light.btn.database-send(data-email=user.email) Send DC

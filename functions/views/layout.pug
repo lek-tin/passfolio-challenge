@@ -1,0 +1,33 @@
+doctype html
+html
+  head
+    title Passfolio Dashboard
+    // Compiled and minified CSS
+    link(rel='stylesheet', href='/stylesheets/materialize.min.css')
+    // Custom stylesheet
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+    script(src='/javascripts/jquery.min.js')
+
+  body
+    nav
+      .nav-wrapper
+        a.brand-logo(href='https://www.passfolioapp.com/')
+          img#logo(src="/images/logo.png")
+        a.sidenav-trigger(href='#', data-target='mobile-demo')
+          i.material-icons menu
+        ul.right.hide-on-med-and-down
+          li
+            span Hello #{name}
+    ul#mobile-demo.sidenav
+      li
+        span Hello #{name}
+
+    .row
+      .col.s12
+        block content
+
+  // Compiled and minified JavaScript libs
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js')
+  script(src='/javascripts/main.js')
+
